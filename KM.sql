@@ -1,0 +1,25 @@
+USE [EScooterDB]
+GO
+
+/****** Object:  Table [dbo].[RidesKm]    Script Date: 17.07.2025 11:09:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[RidesKm](
+	[RideID] [int] IDENTITY(1,1) NOT NULL,
+	[Kilometers] [float] NOT NULL,
+	[Fare] [float] NOT NULL,
+	[RideDate] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RideID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[RidesKm] ADD  DEFAULT (getdate()) FOR [RideDate]
+GO
+
